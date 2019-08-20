@@ -4,11 +4,16 @@ void main(){
 int a, b;
 printf("Enter two integers : ");
 scanf("%d %d", &a, &b);
-printf("Sum\t:\t",a+b,"\nDifference\t:\t",a-b,"\nProduct\t:\t",a*b,"\nDivision\t:\t", a/b,"\n");
+printf("Sum : ",a+b);
+printf("Difference : ", a-b);
+printf("Product : ",a*b);
+printf("Division : ", a/b);
 
 float d, c;
 printf("Enter two floating numbers : ");
 scanf("%d %d", &c, &d);
-printf("Sum\t:\t",c+d,"\nDifference\t:\t",c-d,"\nProduct\t:\t",c*d,"\nDivision\t:\t", c/d,"\n");
-
+printf("Sum : ",c+d);
+printf("Difference : ", c-d);
+printf("Product : ",c*d);
+printf("Division : ", c/d);
 }
