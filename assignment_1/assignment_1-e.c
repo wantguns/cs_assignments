@@ -1,19 +1,20 @@
 #include <stdio.h>
 
-void main(){
+int main(){
 int a, b;
 printf("Enter two integers : ");
 scanf("%d %d", &a, &b);
-printf("Sum : ",a+b);
-printf("Difference : ", a-b);
-printf("Product : ",a*b);
-printf("Division : ", a/b);
+printf("Sum : %d",a+b);
+printf("Difference : %d", a-b);
+printf("Product : %d",a*b);
+printf("Division : %d", a/b);
 
 float d, c;
 printf("Enter two floating numbers : ");
-scanf("%d %d", &c, &d);
-printf("Sum : ",c+d);
-printf("Difference : ", c-d);
-printf("Product : ",c*d);
-printf("Division : ", c/d);
+scanf("%f %f", &c, &d);
+printf("Sum : %f",c+d);
+printf("Difference : %f", c-d);
+printf("Product : %f",c*d);
+printf("Division : %f", c/d);
+return 0;
 }
