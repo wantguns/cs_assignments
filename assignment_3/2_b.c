@@ -5,5 +5,5 @@ int main() {
   int num, numsq;
   scanf("%d", &num);
   numsq = pow(num, 2);
-  printf("%s", (num%10 == num) ? "Yes" : "No");
+  printf("%s", (numsq%1000 == num) ? "Yes" : "No");
 }

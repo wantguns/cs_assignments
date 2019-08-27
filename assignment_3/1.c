@@ -3,5 +3,5 @@ int main() {
   int num;
   printf("Enter the number : ");
   scanf("%d", &num);
-  printf("%d\n%d\n%d\n", num, num/10, num/100);
+  printf("%d\n%d\n%d\n", num%1000, num%100, num%10);
 }
