@@ -32,7 +32,10 @@ int main() {
   scanf("%d", &choice);
   switch(choice) {
     case 1 : elseif(a, b, c);
+             break;
     case 2 : nesif(a, b, c);
+             break;
     case 3 : conditional(a, b, c);
+             break;
   }
 }
