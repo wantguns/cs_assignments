@@ -17,7 +17,7 @@ int main() {
       printf("The temperature in Fahrenheit is : %f", ((c*9/5) + 32));
       break;
     default :
-    printf("g*ndu samjha hai kya");
+    printf("Wrong choice printed");
   }
   return 0;
 }
