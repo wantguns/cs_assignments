@@ -16,8 +16,10 @@ void nesif(int a, int b, int c) {
     if (a > c) printf("Greatest number : %d", a);
     if (a < c) printf("Greatest number : %d", c);
   }
-  if (a < b && b > c) printf("Greatest number : %d", b);
-  if (a < c && c > b) printf("Greatest number : %d", c);
+  if (b > a) {
+    if (b > c) printf("Greatest number : %d", b);
+    if (b < c) printf("Greatest number : %d", c);
+  }
 }
 
 void conditional(int a, int b, int c){

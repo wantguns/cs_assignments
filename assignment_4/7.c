@@ -8,7 +8,7 @@ Basic Salary > 20000 : HRA = 30%, DA = 95% */
 int main() {
   float salary;
   printf("Enter your basic salary : ");
-  scanf("%f". &salary);
+  scanf("%f", &salary);
   if (salary <= 10000) printf("Gross Salary : %f\n", salary);
   if (salary > 10000 && salary <= 20000) printf("Gross Salary : %f\n", salary*1.05);
   if (salary > 20000) printf("Gross Salary : %f\n", salary*1.25);
