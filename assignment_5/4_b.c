@@ -5,19 +5,16 @@
 int combination(int c, int num) {
         if ( c == 0 || num == 0) return 1;
         else {
-                int num1, c1, nume = 1, denom = 1, diff;
-                num1 = num;
-                c1 = c;
+                int nume = 1, denom = 1, diff;
                 diff = c - num;
-
-                while(c1) {
-                        nume *= c1;
-                        c1--;
+                while(c) {
+                        nume *= c;
+                        c--;
                 }
 
-                while(num1) {
-                        denom *= num1;
-                        num1--;
+                while(num) {
+                        denom *= num;
+                        num--;
                 }
 
                 if(diff != 0) {
