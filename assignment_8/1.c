@@ -84,7 +84,47 @@ int stats(int *marks, int size) {
 
 }
 
+void insert_mark() {
+    int index, marks, temp;
+    printf("Enter the position and and marks to which you have to insert : \n");
+    scanf("%d %d", &index, &marks);
+    for (int i = index; i < numStd; i++) {
+        temp = stdMarks[i];
+        stdMarks[i+1] = temp;
+    }
+    stdMarks[index] = marks;
+    numStd++;
+}
+
+void delete_mark() {
+    int index, marks, temp;
+    printf("Enter the position and and marks to which you have to delete : \n");
+    scanf("%d %d", &index, &marks);
+    for (int i = index; i < numStd; i++) {
+        temp = stdMarks[i];
+        stdMarks[i-1] = temp;
+    }
+    stdMarks[numStd-1] = "\0";
+    numStd--;
+}
+
+void sort(int array[], int size) {
+    int temp;
+    for (int i = 0; i < size; ++i) {
+        for (int j = i + 1; j < size; ++j) {
+            if (stdMarks[i] > stdMarks[j]) {
+                temp = stdMarks[i];
+                stdMarks[i] = stdMarks[j];
+                stdMarks[j] = temp;
+            }
+        }
+    }
+}
+
 int main() {
+
+    // QUESTION 1 
+    
     printf("Enter the number of students : ");
     scanf("%d", &numStd);
 
@@ -105,6 +145,72 @@ int main() {
     display(stdMarks, numStd);
     printf("Maximum Marks : %d\nMinimum Marks : %d\n", maximumOf(stdMarks, numStd), minimumOf(stdMarks, numStd));
     stats(stdMarks, numStd);
+
+
+
+    //  QUESTION 2
+    int oddEvenMarks[numStd], oddMarks[numStd], evenMarks[numStd], check = 0;
+    for (int i = 0; i < numStd; i++) {
+        if (stdMarks[i] % 2 != 0) {
+            oddMarks[check] = stdMarks[i];
+            check++;
+        }
+    }
+
+    int index = 0;
+    for (int i = 0; i < numStd; i++) {
+        if (stdMarks[i] % 2 == 0) {
+            evenMarks[check] = stdMarks[i];
+            index++;
+        }
+    }
+
+    index = 0;
+    for (int i = 0; i < numStd; i++) {
+        if (i <= check) {
+            oddEvenMarks[i] = oddMarks[i];
+        }
+        else {
+            oddEvenMarks[i] = evenMarks[index];
+            index++;
+        }
+    }
+
+    //Printing the oddEvenMarks array : 
+    for (int i = 0; i < numStd; i++) {
+        printf("%d\n", oddEvenMarks[i]);
+    }
+
+
+    // QUESTION 3
+
+    int choice;
+    printf("1. Enter a new Student\n2. Delete a Student from record\n");
+    scanf("%d", &choice);
+    switch(choice) {
+        case 1 : insert_mark();
+        case 2 : delete_marks();
+    }
+
+    //QUESTION 4
+
+    int position;
+    printf("Enter the positon for the sorted array : ");
+    scanf("%d", &position);
+    sort(stdMarks, numStd);
+    printf("The marks at the given index were : %d\n", stdMarks[position]);
+
+    // QUESTION 5   
+
+    int checkMarks;
+    printf("Which marks do you want to check : ");
+    scanf("%d", &checkMarks);
+    for (int i = 0; i < numStd; i++) {
+        if (stdMarks[i] == checkMarks) {
+            printf("Equal marks found at index %d !\n", i);
+        }
+    }
+
 
     return 0;
 }
